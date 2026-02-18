@@ -3,3 +3,7 @@
     height: 100%;
     object-fit: cover; /* per farla riempire senza deformarsi */
 }
+
+.color {
+    color: #ff00aa;
+}
