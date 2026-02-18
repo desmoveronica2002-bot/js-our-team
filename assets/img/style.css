@@ -1,0 +1,5 @@
+.fluido {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* per farla riempire senza deformarsi */
+}
