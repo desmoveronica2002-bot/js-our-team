@@ -47,7 +47,7 @@ const teamMembers = [
   }
 ];
 
-const cardContainer = document.querySelector(".card-container");
+const cardContainer = document.querySelector(".card-container"); //.card-container metto il punto perchè seleziono una classe e non un id
 
 let cards = "";
 
