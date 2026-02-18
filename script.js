@@ -53,16 +53,18 @@ let cards = "";
 
 function renderMarkup(name, role, email, img) {
   const markup = `
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-6 col-md-4 d-flex">
-          <img src="${img}" class="fluido rounded-start" alt="...">
-        </div>
-        <div class="col-6 col-md-8">
-          <div class="card-body bg-dark text-white fluido">
-            <h5 class="card-title">${name}</h5>   
-            <p class="card-text ">${role}</p>
-            <p class="card-text text-info">${email}</p>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-6 col-md-4 d-flex">
+            <img src="${img}" class="fluido rounded-start" alt="...">
+          </div>
+          <div class="col-6 col-md-8">
+            <div class="card-body bg-dark text-white fluido">
+              <h5 class="card-title">${name}</h5>   
+              <p class="card-text">${role}</p>
+              <p class="card-text text-info">${email}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -77,6 +79,7 @@ for (let i = 0; i < teamMembers.length; i++) {
 
   const { name, role, email, img } = member;
   const card = renderMarkup(name, role, email, img);
+
   cards += card;
 }
 
