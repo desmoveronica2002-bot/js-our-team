@@ -14,6 +14,7 @@ il nuovo membro sulla pagina (usate una foto qualunque, anche vostra se volete s
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <title>Team</title>
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -38,6 +39,26 @@ il nuovo membro sulla pagina (usate una foto qualunque, anche vostra se volete s
 
     </main>
 
+    <footer class="container p-3">
+      <!--Aggiungere un form di aggiunta membri che permetta di visualizzare
+       il nuovo membro sulla pagina-->
+
+       <button class="btn btn-primary" onclick="compilaDati()">AGGIUNGI MEMBRO</button>
+
+
+      <div id="nascondi">
+        <div class="input-group p-3">
+          <input type="text" class="form-control" placeholder="Nome e cognome" id="nome_cognome">
+          <input type="text" class="form-control" placeholder="specializzazione" id="specializzazione">
+          <input type="text" class="form-control" placeholder="mail" id="mail">
+        </div>
+
+        <button class="btn btn-primary" onclick="conferma()">Conferma</button>
+        <button class="btn btn-primary" onclick="fine()">Fine</button>
+      </div>
+
+
+    </footer>
 
   <script src="script.js"></script>
 </body>

@@ -84,3 +84,63 @@ for (let i = 0; i < teamMembers.length; i++) {
 }
 
 cardContainer.innerHTML = cards;
+
+//Aggiungere un form di aggiunta membri
+// che permetta di visualizzare il nuovo membro sulla pagina
+
+const tabelleDaCompilare = document.getElementById('nascondi');
+tabelleDaCompilare.style.display = "none"; 
+
+function compilaDati(){
+  tabelleDaCompilare.style.display = 'block';
+
+}
+
+function conferma(){
+
+  const nomeCognomeUtente = document.getElementById('nome_cognome').value;
+  const specializzazioneUtente = document.getElementById('specializzazione').value;
+  const mailUtente = document.getElementById('mail').value ;
+
+    const markup = `
+    <div class="elimina_colonna col-12 col-md-6 col-lg-4">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-6 col-md-4 d-flex">
+            <img src="img/utente.png" class="fluido rounded-start" alt="...">
+          </div>
+          <div class="col-6 col-md-8">
+            <div class="card-body bg-dark text-white fluido">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">${nomeCognomeUtente}</h5>
+                <button class="btn btn-primary btn-sm elimina"><i class="bi bi-trash"></i></button>
+              </div>  
+              <p class="card-text">${specializzazioneUtente}</p>
+              <p class="card-text text-info">${mailUtente}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  cardContainer.innerHTML += markup; //Prendo quello che c’è già dentro il contenitore e aggiungo in fondo il nuovo markup
+}
+
+function fine(){
+    document.getElementById("nome_cognome").value = "";
+    document.getElementById("specializzazione").value = "";
+    document.getElementById("mail").value = "";
+
+    tabelleDaCompilare.style.display = "none"; 
+}
+
+// eliminare una card col cestino
+  cardContainer.addEventListener("click", function(event) { //.addEventListener("click", ...) ascolta qualsiasi click dentro il contenitore
+
+  if (event.target.closest(".elimina")) { //event => è l’evento (click)/.targhet è l'oggetto html/ .closest(".elimina") risale fino al bottone <button> con classe elimina (cestino)
+    const card = event.target.closest(".elimina_colonna");
+    card.remove();
+  }
+
+});
